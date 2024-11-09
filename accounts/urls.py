@@ -1,4 +1,3 @@
-# accounts/urls.py
 from django.urls import path
 from . import views
 
@@ -8,6 +7,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('password_reset/', views.password_reset_view, name='password_reset'),
     path('password_reset/done', views.password_reset_done_view, name='password_reset_done'),
+    path('reset/<uidb64>/<token>', views.password_reset_done_view, name='password_reset_done'),
     path('logout/', views.logout_view, name='logout'),
     path('password_reset/', views.password_reset_view, name='password_reset'),
 ]
